@@ -123,8 +123,6 @@ select#sort{background:var(--panel);border:1px solid var(--border);color:var(--f
 <button class="chip" data-group="ctype" data-val="观点访谈">观点访谈<span class="cn">10</span></button>
 <button class="chip" data-group="ctype" data-val="Builder 推文">Builder 推文<span class="cn">5</span></button>
 <button class="chip" data-group="ctype" data-val="技术突破">技术突破<span class="cn">4</span></button></div></div>
-    <div class="fgroup"><h4>内容类别</h4><div class="chips"><button class="chip" data-group="cat" data-val="news">科技热点<span class="cn">203</span></button>
-<button class="chip" data-group="cat" data-val="tweet">Builder 推文<span class="cn">5</span></button></div></div>
     <div class="fgroup"><h4>信源层级</h4><div class="chips"><button class="chip" data-group="layer" data-val="L1_official">官方频道<span class="cn">18</span></button>
 <button class="chip" data-group="layer" data-val="L4_tech_community">技术社区/论文<span class="cn">171</span></button>
 <button class="chip" data-group="layer" data-val="L2_founder_x">创始人/核心成员<span class="cn">8</span></button>
@@ -1854,7 +1852,7 @@ The same thing is going to happen in many other fields as well as we bring down 
 <footer>每周科技洞察 · 数据源：Zara Zhang follow-builders 中央 feed + 本地 frontier-radar 多层信源 · 仅聚合公开内容</footer>
 <script>
 (function(){
-  var sel={plat:new Set(),cat:new Set(),layer:new Set(),topics:new Set(),company:new Set(),ctype:new Set(),author:new Set()};
+  var sel={plat:new Set(),layer:new Set(),topics:new Set(),company:new Set(),ctype:new Set(),author:new Set()};
   var bigOnly=false;
   var q=document.getElementById('q');
   var list=document.getElementById('list');
@@ -1870,7 +1868,6 @@ The same thing is going to happen in many other fields as well as we bring down 
       var ok=true;
       if(bigOnly&&c.dataset.big!=='1')ok=false;
       if(ok&&sel.plat.size&&!sel.plat.has(c.dataset.plat))ok=false;
-      if(ok&&sel.cat.size&&!sel.cat.has(c.dataset.cat))ok=false;
       if(ok&&sel.layer.size&&!sel.layer.has(c.dataset.layer))ok=false;
       if(ok&&sel.company.size&&!sel.company.has(c.dataset.company))ok=false;
       if(ok&&sel.ctype.size&&!sel.ctype.has(c.dataset.ctype))ok=false;
