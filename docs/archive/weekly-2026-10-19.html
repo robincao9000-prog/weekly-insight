@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>每周科技洞察 · 2026-10-13 → 2026-10-19</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#7ee787;--big:#f0883e;--tag:#21262d;--maxw:1080px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:20px 20px 8px;max-width:var(--maxw);margin:0 auto}
+h1{font-size:22px;margin:0 0 4px;line-height:1.3}
+.sub{color:var(--dim);font-size:13px}
+.share{max-width:var(--maxw);margin:10px auto 0;padding:8px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px}
+.share .slabel{color:var(--accent2);font-weight:600}
+.share a{word-break:break-all;flex:1;min-width:180px}
+.sticky{position:sticky;top:0;z-index:20;background:rgba(13,17,23,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.bar{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#q{flex:1;min-width:160px;background:var(--panel);border:1px solid var(--border);color:var(--fg);border-radius:8px;padding:9px 12px;font-size:15px}
+.btn{background:var(--panel);border:1px solid var(--border);color:var(--fg);border-radius:8px;padding:9px 14px;cursor:pointer;font-size:14px;white-space:nowrap}
+.btn.sm{padding:5px 10px;font-size:13px}
+.btn:hover{border-color:var(--accent)}
+.btn.on{background:var(--accent);color:#0d1117;border-color:var(--accent);font-weight:600}
+.badge{display:inline-block;min-width:18px;padding:0 6px;margin-left:6px;background:var(--accent);color:#0d1117;border-radius:9px;font-size:12px;font-weight:700;text-align:center}
+#toggle{border-color:var(--accent);color:var(--accent);font-weight:600;box-shadow:0 0 0 1px var(--accent) inset}
+#toggle .arrow{display:inline-block;margin-left:4px;font-size:11px;transition:transform .25s ease}
+#toggle[aria-expanded="true"]{background:var(--accent);color:#0d1117;box-shadow:none}
+#toggle[aria-expanded="true"] .arrow{transform:rotate(180deg)}
+#toggle[aria-expanded="false"]{animation:hintpulse 2.4s ease-in-out 2}
+@keyframes hintpulse{0%,100%{box-shadow:0 0 0 1px var(--accent) inset}50%{box-shadow:0 0 0 1px var(--accent) inset,0 0 10px 1px rgba(88,166,255,.55)}}
+#filters{max-width:var(--maxw);margin:0 auto;padding:0 20px;overflow-y:auto;transition:max-height .25s ease;max-height:62vh}
+#filters.collapsed{max-height:0}
+.fgroup{margin:12px 0}
+.fgroup h4{margin:0 0 8px;font-size:13px;color:var(--dim);font-weight:600}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--tag);border:1px solid var(--border);color:var(--fg);border-radius:16px;padding:5px 11px;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip:hover{border-color:var(--accent)}
+.chip.on{background:var(--accent);color:#0d1117;border-color:var(--accent);font-weight:600}
+.chip .cn{background:rgba(255,255,255,.12);border-radius:8px;padding:0 6px;font-size:11px;min-width:16px;text-align:center}
+.chip.on .cn{background:rgba(0,0,0,.18)}
+main{max-width:var(--maxw);margin:0 auto;padding:14px 20px 60px}
+.count{color:var(--dim);font-size:13px;margin:10px 2px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:14px 0}
+.card:hover{border-color:#3d4753}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tag{background:var(--tag);color:var(--dim);border-radius:6px;padding:2px 8px;font-size:12px}
+.tag.big{background:var(--big);color:#0d1117;font-weight:700}
+.tag.company{background:#1f6feb26;color:#79c0ff}
+.tag.plat-frontier{background:#1f6feb33;color:#79c0ff}
+.tag.plat-zara{background:#8957e533;color:#d2a8ff}
+.tag.topic{color:var(--accent2)}
+.title-cn{font-size:17px;margin:2px 0 3px;line-height:1.4}
+.title-en{color:var(--dim);font-size:13px;font-style:italic;margin-bottom:6px}
+.sum-cn{margin:8px 0}
+.en-block{margin:6px 0}
+.en-block summary{color:var(--dim);font-size:13px;cursor:pointer}
+.en-block p{color:var(--dim);font-size:13.5px;margin:6px 0 0;padding-left:10px;border-left:2px solid var(--border)}
+.insight,.action{margin:8px 0;padding:8px 12px;border-radius:8px;font-size:14px}
+.insight{background:#1f6feb1a;border-left:3px solid var(--accent)}
+.action{background:#7ee7871a;border-left:3px solid var(--accent2)}
+.ilabel,.alabel{display:inline-block;font-weight:700;margin-right:6px;font-size:12px}
+.ilabel{color:var(--accent)}.alabel{color:var(--accent2)}
+.meta{color:var(--dim);font-size:12.5px;margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.src-link{margin-left:auto}
+.eng{color:var(--dim)}
+.empty{color:var(--dim);text-align:center;padding:40px 0}
+footer{max-width:var(--maxw);margin:0 auto;padding:20px;color:var(--dim);font-size:12px;text-align:center}
+select#sort{background:var(--panel);border:1px solid var(--border);color:var(--fg);border-radius:6px;padding:4px 8px;font-size:13px}
+.ov{max-width:var(--maxw);margin:16px auto 4px;padding:0 20px}
+.ov-h{font-size:15px;margin:0 0 12px;padding-left:10px;border-left:3px solid var(--accent);line-height:1.3}
+.ov-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.ov-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.ov-num{font-size:26px;font-weight:800;color:var(--accent);line-height:1.1}
+.ov-label{color:var(--dim);font-size:12.5px;margin-top:4px}
+.ov-unit{margin-left:4px;opacity:.65}
+@media(max-width:720px){
+  .ov{padding:0 12px;margin-top:12px}
+  .ov-cards{grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+  .ov-card{padding:10px}
+  .ov-num{font-size:22px}
+}
+@media(max-width:720px){
+  header{padding:14px 14px 6px}h1{font-size:19px}
+  .bar{padding:8px 12px;gap:8px}
+  main{padding:10px 12px 50px}
+  .card{padding:14px;margin:10px 0}
+  .title-cn{font-size:16px}
+  #filters{padding:0 12px;max-height:56vh}
+  .share{margin:8px 12px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>每周科技洞察 · 2026-10-13 → 2026-10-19</h1>
+  <div class="sub">共 25 条 · Frontier Radar 0 · Follow Builders 25 · 更新于 2026-10-19 10:31</div>
+  <div class="share"><span class="slabel">公网分享</span><a href="https://robincao9000-prog.github.io/weekly-insight/" target="_blank" rel="noopener" id="shareurl">https://robincao9000-prog.github.io/weekly-insight/</a><button class="btn sm" id="copyshare">复制链接</button></div>
+</header>
+<div class="sticky">
+  <div class="bar">
+    <input id="q" type="search" placeholder="搜索标题 / 摘要 / 信源 / 人物…">
+    <button class="btn" id="bigonly">★ 本周重点</button>
+    <button class="btn" id="toggle" aria-expanded="false" title="展开筛选选项">筛选选项 <span class="badge" id="selcount" style="display:none">0</span><span class="arrow">▾</span></button>
+    <button class="btn" id="clear">清空</button>
+  </div>
+  <div id="filters">
+    <div class="fgroup"><h4>来源平台</h4><div class="chips"><button class="chip" data-group="plat" data-val="frontier">Frontier Radar<span class="cn">0</span></button>
+<button class="chip" data-group="plat" data-val="zara">Follow Builders<span class="cn">25</span></button></div></div>
+    <div class="fgroup"><h4>公司机构</h4><div class="chips"><button class="chip" data-group="company" data-val="社区/其他">社区/其他<span class="cn">25</span></button></div></div>
+    <div class="fgroup"><h4>内容类型</h4><div class="chips"><button class="chip" data-group="ctype" data-val="Builder 推文">Builder 推文<span class="cn">23</span></button>
+<button class="chip" data-group="ctype" data-val="播客深度访谈">播客深度访谈<span class="cn">2</span></button></div></div>
+    <div class="fgroup"><h4>信源层级</h4><div class="chips"><button class="chip" data-group="layer" data-val="L2_builder">Builder 声音<span class="cn">23</span></button>
+<button class="chip" data-group="layer" data-val="L3_longform">深度长访谈<span class="cn">2</span></button></div></div>
+    <div class="fgroup"><h4>关注话题</h4><div class="chips"></div></div>
+    <div class="fgroup"><h4>人物 · 作者</h4><div class="chips"><button class="chip" data-group="author" data-val="Peter Yang">Peter Yang<span class="cn">6</span></button>
+<button class="chip" data-group="author" data-val="Aaron Levie">Aaron Levie<span class="cn">4</span></button>
+<button class="chip" data-group="author" data-val="Guillermo Rauch">Guillermo Rauch<span class="cn">3</span></button>
+<button class="chip" data-group="author" data-val="Dan Shipper">Dan Shipper<span class="cn">2</span></button>
+<button class="chip" data-group="author" data-val="Peter Steinberger">Peter Steinberger<span class="cn">2</span></button>
+<button class="chip" data-group="author" data-val="Thibault Sottiaux">Thibault Sottiaux<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="Nan Yu">Nan Yu<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="Amjad Masad">Amjad Masad<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="Ryo Lu">Ryo Lu<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="Zara Zhang">Zara Zhang<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="Aditya Agarwal">Aditya Agarwal<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="The MAD Podcast with Matt Turck">The MAD Podcast with Matt Turck<span class="cn">1</span></button>
+<button class="chip" data-group="author" data-val="AI &amp; I by Every">AI &amp; I by Every<span class="cn">1</span></button></div></div>
+  </div>
+</div>
+<section class="ov"><h2 class="ov-h">数据纵览</h2><div class="ov-cards"><div class="ov-card"><div class="ov-num">25</div><div class="ov-label">本周总条数<span class="ov-unit">条</span></div></div>
+<div class="ov-card"><div class="ov-num">0</div><div class="ov-label">本周重点<span class="ov-unit">条</span></div></div>
+<div class="ov-card"><div class="ov-num">0</div><div class="ov-label">Frontier Radar<span class="ov-unit">条</span></div></div>
+<div class="ov-card"><div class="ov-num">25</div><div class="ov-label">Follow Builders<span class="ov-unit">条</span></div></div>
+<div class="ov-card"><div class="ov-num">1</div><div class="ov-label">覆盖公司机构<span class="ov-unit">家</span></div></div>
+<div class="ov-card"><div class="ov-num">0</div><div class="ov-label">关注话题<span class="ov-unit">个</span></div></div>
+<div class="ov-card"><div class="ov-num">13</div><div class="ov-label">人物 · 作者<span class="ov-unit">位</span></div></div></div></section>
+<main>
+  <div class="count">
+    <span id="count"></span>
+    <span>排序 <select id="sort"><option value="date">发布日期(新→旧)</option><option value="date_asc">发布日期(旧→新)</option><option value="big">本周重点优先</option></select></span>
+  </div>
+  <div id="list">
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Yang" data-big="0" data-date="2026-10-18" data-topics="" data-search="ai 或成为大型游戏提速的新变量 tim is so right. hope the devs building starcraft 3 sees this tweet and embrace ai to ship before 2030 🙂 https://t.co/oa ai 产品教育者 peter yang 认同 tim 关于开发效率的观点，并呼吁 starcraft 3 团队采用 ai，争取不要等到 2030 年才交付。原文是倡议而非项目进度披露。 x / peter yang peter yang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/petergyang/status/2111663267995361287" target="_blank" rel="noopener">AI 或成为大型游戏提速的新变量</a></h3>
+  <div class="title-en">Tim is so right. Hope the devs building StarCraft 3 sees this tweet and embrace AI to ship before 2030 🙂 https://t.co/OA</div>
+  <p class="sum-cn">AI 产品教育者 Peter Yang 认同 Tim 关于开发效率的观点，并呼吁 StarCraft 3 团队采用 AI，争取不要等到 2030 年才交付。原文是倡议而非项目进度披露。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Tim is so right. Hope the devs building StarCraft 3 sees this tweet and embrace AI to ship before 2030 🙂 https://t.co/OAFYpl4KR2</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>玩家对经典大型游戏漫长开发周期的不满，正在把 AI 辅助内容生产、测试与工程协作推到更显眼的位置，但交付质量仍取决于完整生产流程。</div>
+  <div class="action"><span class="alabel">招聘行动</span>关注游戏与生成式 AI 交叉人才，尤其是具备 AI 辅助关卡生产、自动化测试和大型项目工程管理经验的候选人。</div>
+  <div class="meta">X / Peter Yang · 2026-10-18 <span class="eng">♥ 71 · ↻ 1 · 💬 5</span> <a class="src-link" href="https://x.com/petergyang/status/2111663267995361287" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Guillermo Rauch" data-big="0" data-date="2026-10-18" data-topics="" data-search="ai 开发最终仍要回到成品价值 “what matters is the end product, whether it&#x27;s a game or an engine”. well said! https://t.co/pc90ivia2y vercel ceo guillermo rauch 认同「重要的是最终产品，无论它是一款游戏还是一个引擎」这一观点，强调技术形态不应盖过用户真正获得的结果。原文没有提供更多项目背景。 x / guillermo rauch guillermo rauch">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/rauchg/status/2111643672274165938" target="_blank" rel="noopener">AI 开发最终仍要回到成品价值</a></h3>
+  <div class="title-en">“What matters is the end product, whether it&#x27;s a game or an engine”. Well said! https://t.co/PC90IVIa2y</div>
+  <p class="sum-cn">Vercel CEO Guillermo Rauch 认同「重要的是最终产品，无论它是一款游戏还是一个引擎」这一观点，强调技术形态不应盖过用户真正获得的结果。原文没有提供更多项目背景。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>“What matters is the end product, whether it&#x27;s a game or an engine”. Well said! https://t.co/PC90IVIa2y</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>在 AI 工具和基础设施快速涌现时，团队容易把模型、框架或引擎本身当作成果，真正的竞争力仍来自可被用户感知的完整产品。</div>
+  <div class="action"><span class="alabel">招聘行动</span>招聘 AI 产品与工程人才时，要求候选人说明其工作如何转化为用户结果，避免只按模型名、框架名或技术热度判断能力。</div>
+  <div class="meta">X / Guillermo Rauch · 2026-10-18 <span class="eng">♥ 381 · ↻ 12 · 💬 43</span> <a class="src-link" href="https://x.com/rauchg/status/2111643672274165938" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Thibault Sottiaux" data-big="0" data-date="2026-10-17" data-topics="" data-search="个人 ai agent 开始跨账号协同办事 my work dot &quot;burger&quot; coordinated with my personal dot &quot;dorito&quot; over email at my personal dots request to get documents,  openai codex 与 chatgpt 团队的 thibault sottiaux 分享了一次约二十分钟的 agent 协作：工作侧 agent burger 按个人侧 agent dorito 的请求，通过邮件取得文件，再与会计师协同完成税务材料处理。他用这次体验说明，多 agent 跨身份、跨系统完成真实事务仍处于非常早期的阶段。 x / thibault sottiaux thibault sottiaux">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/thsottiaux/status/2111495392559067199" target="_blank" rel="noopener">个人 AI agent 开始跨账号协同办事</a></h3>
+  <div class="title-en">My work dot &quot;Burger&quot; coordinated with my personal dot &quot;Dorito&quot; over email at my personal dots request to get documents, </div>
+  <p class="sum-cn">OpenAI Codex 与 ChatGPT 团队的 Thibault Sottiaux 分享了一次约二十分钟的 agent 协作：工作侧 agent Burger 按个人侧 agent Dorito 的请求，通过邮件取得文件，再与会计师协同完成税务材料处理。他用这次体验说明，多 agent 跨身份、跨系统完成真实事务仍处于非常早期的阶段。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>My work dot &quot;Burger&quot; coordinated with my personal dot &quot;Dorito&quot; over email at my personal dots request to get documents, which then coordinated with with my CPA in order to file some tax stuff. Took 20 minutes. We&#x27;re still so early.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>个人与企业 agent 的价值正从单点回答转向跨账号编排，但身份隔离、授权传递和可审计交接会决定这类工作流能否进入高风险业务。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才 mapping 应重点关注做过 agent orchestration、企业身份权限、邮件自动化与人机审批闭环的人才，并核验其处理跨域授权的工程经验。</div>
+  <div class="meta">X / Thibault Sottiaux · 2026-10-17 <span class="eng">♥ 4351 · ↻ 77 · 💬 737</span> <a class="src-link" href="https://x.com/thsottiaux/status/2111495392559067199" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Yang" data-big="0" data-date="2026-10-17" data-topics="" data-search="用 agent 审计 google 第三方应用权限 if you have way too many apps and agents (45!) connected to your google account like me, here&#x27;s a prompt to audit and re ai 产品教育者 peter yang 分享了一套审计 google 账号连接的 prompt：逐个检查全部应用，区分基础登录与 gmail、drive、calendar 等数据权限，在执行前展示保留、断开或待确认建议，并只删除用户明确批准的连接，最后验证结果。 x / peter yang peter yang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/petergyang/status/2111508293818671449" target="_blank" rel="noopener">用 agent 审计 Google 第三方应用权限</a></h3>
+  <div class="title-en">If you have way too many apps and agents (45!) connected to your Google account like me, here&#x27;s a prompt to audit and re</div>
+  <p class="sum-cn">AI 产品教育者 Peter Yang 分享了一套审计 Google 账号连接的 prompt：逐个检查全部应用，区分基础登录与 Gmail、Drive、Calendar 等数据权限，在执行前展示保留、断开或待确认建议，并只删除用户明确批准的连接，最后验证结果。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>If you have way too many apps and agents (45!) connected to your Google account like me, here&#x27;s a prompt to audit and remove them:
+
+&quot;Help me audit my Google app connections at https://t.co/5eMX9dNhLD
+
+1. Review EVERY app across all connection categories. Ask me which ones I still use rather than guessing.
+
+2. Open each app&#x27;s details. Distinguish basic Google sign-in from permissions to access Gmail, Drive, Calendar, or other data.
+
+3. Suggest which to keep, disconnect, or ask me about. Explain your reasoning and what might stop working. Flag broad permissions, unfamiliar providers, and duplicate entries.
+
+4. Show me your recommendations before changing anything. Only disconnect apps I explicitly approve, then verify they&#x27;re removed. Don&#x27;t delete app accounts or cancel subscriptions.”</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>安全型 agent 的关键不是替用户大胆操作，而是完整盘点、解释权限、显式审批和事后验证，这套可逆工作流适用于更多企业权限治理场景。</div>
+  <div class="action"><span class="alabel">招聘行动</span>评估 agent 产品与安全人才时，可用第三方应用权限审计作为实操题，观察候选人是否主动设计最小权限、人工确认和执行验证。</div>
+  <div class="meta">X / Peter Yang · 2026-10-17 <span class="eng">♥ 44 · ↻ 7 · 💬 23</span> <a class="src-link" href="https://x.com/petergyang/status/2111508293818671449" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Yang" data-big="0" data-date="2026-10-17" data-topics="" data-search="claude code 应用在速度与易用性上追近 chatgpt have to give credit to @amorriscode and team - the claude code app is much faster now and arguably simpler to use than c ai 产品教育者 peter yang 表示，claude code 应用近期明显提速，使用体验甚至可能比 chatgpt 更简单；他认为仍缺少更强的浏览器与电脑操作、覆盖全部线程的远程控制，以及实时语音能力。 x / peter yang peter yang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/petergyang/status/2111496600522805624" target="_blank" rel="noopener">Claude Code 应用在速度与易用性上追近 ChatGPT</a></h3>
+  <div class="title-en">Have to give credit to @amorriscode and team - the Claude Code app is much faster now and arguably simpler to use than C</div>
+  <p class="sum-cn">AI 产品教育者 Peter Yang 表示，Claude Code 应用近期明显提速，使用体验甚至可能比 ChatGPT 更简单；他认为仍缺少更强的浏览器与电脑操作、覆盖全部线程的远程控制，以及实时语音能力。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Have to give credit to @amorriscode and team - the Claude Code app is much faster now and arguably simpler to use than ChatGPT.
+
+The only things missing still are better browser/computer use, remote control for all threads, and live voice. https://t.co/kWULRv1A1t</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>编码 agent 的竞争正在从模型能力扩展到启动速度、交互复杂度和跨设备连续性，下一阶段差异化会集中在完整执行环境。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才 mapping 可重点覆盖 computer use、远程会话、实时语音和低延迟客户端方向，并在产品岗位评估中加入端到端摩擦分析。</div>
+  <div class="meta">X / Peter Yang · 2026-10-17 <span class="eng">♥ 225 · ↻ 5 · 💬 58</span> <a class="src-link" href="https://x.com/petergyang/status/2111496600522805624" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Nan Yu" data-big="0" data-date="2026-10-17" data-topics="" data-search="ai 正重排开发者的注意力 i had the same conversation reminiscing at a team offsite the other day.
+
+“what did we pay attention to before ai?”
+
+“😅  openai codex 产品负责人 nan yu 回忆，团队讨论起 ai 之前大家关注什么，答案竟是前端 javascript 框架。这句调侃反映出开发者话题中心已从框架选择快速转向 ai 编程与 agent。 x / nan yu nan yu">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/thenanyu/status/2111597172840083574" target="_blank" rel="noopener">AI 正重排开发者的注意力</a></h3>
+  <div class="title-en">I had the same conversation reminiscing at a team offsite the other day.
+
+“What did we pay attention to before AI?”
+
+“😅 </div>
+  <p class="sum-cn">OpenAI Codex 产品负责人 Nan Yu 回忆，团队讨论起 AI 之前大家关注什么，答案竟是前端 JavaScript 框架。这句调侃反映出开发者话题中心已从框架选择快速转向 AI 编程与 agent。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>I had the same conversation reminiscing at a team offsite the other day.
+
+“What did we pay attention to before AI?”
+
+“😅 Front end JavaScript frameworks” https://t.co/sKe9X8ylhL</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>技术社区注意力迁移会连带改变人才供给、技能标签和开发工具生态，传统前端能力正在与 AI 原生工程能力重新组合。</div>
+  <div class="action"><span class="alabel">招聘行动</span>更新岗位画像时不要只按旧技术栈筛人，应增加 AI 辅助开发、agent 工作流和快速学习新工具的可验证信号。</div>
+  <div class="meta">X / Nan Yu · 2026-10-17 <span class="eng">♥ 56 · ↻ 2 · 💬 4</span> <a class="src-link" href="https://x.com/thenanyu/status/2111597172840083574" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Amjad Masad" data-big="0" data-date="2026-10-17" data-topics="" data-search="replit 坚持多模型，同时将 openai 设为首选伙伴 to clarify: replit remains model agnostic. our users can choose anthropic models as well as many other supported models. replit ceo amjad masad 澄清，replit 仍保持模型中立，用户可选择 anthropic 等多家模型；openai 只是基于性能、成本与合作强度，成为当前驱动 replit agent 的首选伙伴。平台会保留选择权，同时优化默认体验。 x / amjad masad amjad masad">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/amasad/status/2111494912562888939" target="_blank" rel="noopener">Replit 坚持多模型，同时将 OpenAI 设为首选伙伴</a></h3>
+  <div class="title-en">To clarify: Replit remains model agnostic. Our users can choose Anthropic models as well as many other supported models.</div>
+  <p class="sum-cn">Replit CEO Amjad Masad 澄清，Replit 仍保持模型中立，用户可选择 Anthropic 等多家模型；OpenAI 只是基于性能、成本与合作强度，成为当前驱动 Replit Agent 的首选伙伴。平台会保留选择权，同时优化默认体验。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>To clarify: Replit remains model agnostic. Our users can choose Anthropic models as well as many other supported models.
+
+What I meant at TC Disrupt is that OpenAI is now our preferred partner powering Agent based on performance, cost, and strength of our partnership.
+
+We believe in giving our users model choice while optimizing the default experience for the best performance at the best price.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>AI 应用公司的模型策略正走向多供应商加动态默认：开放选择降低锁定风险，首选伙伴则帮助团队集中优化成本与性能。</div>
+  <div class="action"><span class="alabel">招聘行动</span>重点寻找具备多模型路由、模型评测、推理成本优化和供应商管理经验的人才，并考察其能否把评测结果转化为产品默认策略。</div>
+  <div class="meta">X / Amjad Masad · 2026-10-17 <span class="eng">♥ 415 · ↻ 19 · 💬 128</span> <a class="src-link" href="https://x.com/amasad/status/2111494912562888939" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Aaron Levie" data-big="0" data-date="2026-10-17" data-topics="" data-search="ai 不会终结软件工程，反而让更多工作变成软件问题 the biggest misread of anyone predicting the end of software engineering was imagining that the world only needed a cert box ceo aaron levie 认为，预测软件工程消亡的最大误判，是假设世界只需要有限数量的软件。agent 能操作工具、使用电脑、即时写代码并快速处理数据后，银行交易、生命科学研究、制造供应链等原本难以数字化的工作都更像软件问题；手工编码会减少，但理解如何工程化系统的人会更加重要。 x / aaron levie aaron levie">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/levie/status/2111525362446520466" target="_blank" rel="noopener">AI 不会终结软件工程，反而让更多工作变成软件问题</a></h3>
+  <div class="title-en">The biggest misread of anyone predicting the end of software engineering was imagining that the world only needed a cert</div>
+  <p class="sum-cn">Box CEO Aaron Levie 认为，预测软件工程消亡的最大误判，是假设世界只需要有限数量的软件。agent 能操作工具、使用电脑、即时写代码并快速处理数据后，银行交易、生命科学研究、制造供应链等原本难以数字化的工作都更像软件问题；手工编码会减少，但理解如何工程化系统的人会更加重要。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>The biggest misread of anyone predicting the end of software engineering was imagining that the world only needed a certain amount of software, and bringing automation to the field would reduce the need for labor. 
+
+Exactly the opposite is happening where essentially most things are actually turning into software. Because agents can use tools, work with computers, write software on the fly, and process data like humans (but far faster), we can now throw “software” at problems that never could reasonably be digitized before.
+
+What that leads to is the role of engineering taking on greater importance in the economy, because we can now engineer far more systems and processes than were possible before.
+
+If you’re a bank trying to do new forms of trading, engineers are often your first bet. If you are in life sciences, you expect more and more research and lab work to be engineering centric. If you’re in manufacturing, you’re trying to automate more of the supply chain, all that is engineering. More and more work is shaped like software problems.
+
+Yes we’re not going to be coding manually in the future. But almost everything will be code, which means those that understand it are in a fantastic position.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>自动化降低的是单个软件任务的成本，而不是社会对软件的总需求；需求弹性可能扩大工程工作的边界，并把领域知识与系统设计能力推到更高位置。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才地图应从传统软件公司扩展到金融、生命科学与制造等 AI 工程化场景，重点寻找兼具领域理解、系统设计和 agent 实践的人才。</div>
+  <div class="meta">X / Aaron Levie · 2026-10-17 <span class="eng">♥ 806 · ↻ 92 · 💬 116</span> <a class="src-link" href="https://x.com/levie/status/2111525362446520466" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Yang" data-big="0" data-date="2026-10-13" data-topics="" data-search="经典游戏续作或可用众筹验证需求 @blizzard_ent i bet if blizzard crowdfunds starcraft 3 rts they&#x27;ll raise millions ai 产品教育者 peter yang 判断，如果 blizzard 为 starcraft 3 即时战略游戏发起众筹，可能获得数百万美元支持。原文讨论的是需求验证设想，并非 blizzard 已公布的计划。 x / peter yang peter yang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/petergyang/status/2109822610637017218" target="_blank" rel="noopener">经典游戏续作或可用众筹验证需求</a></h3>
+  <div class="title-en">@Blizzard_Ent I bet if Blizzard crowdfunds Starcraft 3 RTS they&#x27;ll raise millions</div>
+  <p class="sum-cn">AI 产品教育者 Peter Yang 判断，如果 Blizzard 为 StarCraft 3 即时战略游戏发起众筹，可能获得数百万美元支持。原文讨论的是需求验证设想，并非 Blizzard 已公布的计划。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>@Blizzard_Ent I bet if Blizzard crowdfunds Starcraft 3 RTS they&#x27;ll raise millions</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>对开发周期长、核心用户忠诚的游戏 IP，众筹不仅是融资工具，也能在大规模投入前验证付费意愿与社区参与度。</div>
+  <div class="action"><span class="alabel">招聘行动</span>关注游戏产品、社区增长和众筹平台人才，尤其是能把用户热情转化为可量化需求信号的产品负责人。</div>
+  <div class="meta">X / Peter Yang · 2026-10-13 <span class="eng">♥ 3 · ↻ 0 · 💬 0</span> <a class="src-link" href="https://x.com/petergyang/status/2109822610637017218" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Yang" data-big="0" data-date="2026-10-13" data-topics="" data-search="starcraft 的长期 ip 价值仍未被充分释放 so many people’s childhoods were defined by starcraft even ben.
+
+still can’t believe the new game won’t come out till 20 ai 产品教育者 peter yang 认为，starcraft 影响了许多人的成长经历，对新作可能到 2030 年才推出感到难以置信，并建议 blizzard 同时发展电影、剧集和真正的即时战略新作。 x / peter yang peter yang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/petergyang/status/2109820627561676970" target="_blank" rel="noopener">StarCraft 的长期 IP 价值仍未被充分释放</a></h3>
+  <div class="title-en">So many people’s childhoods were defined by StarCraft even Ben.
+
+Still can’t believe the new game won’t come out till 20</div>
+  <p class="sum-cn">AI 产品教育者 Peter Yang 认为，StarCraft 影响了许多人的成长经历，对新作可能到 2030 年才推出感到难以置信，并建议 Blizzard 同时发展电影、剧集和真正的即时战略新作。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>So many people’s childhoods were defined by StarCraft even Ben.
+
+Still can’t believe the new game won’t come out till 2030. 
+
+@Blizzard_Ent should double down on this franchise. Make movies, TV shows, and yes a real time strategy game! https://t.co/vRnuahUusL</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>经典游戏 IP 的竞争不只在单款产品，而在跨媒体叙事、社区记忆和持续内容供给；过长的交付周期可能消耗代际用户势能。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才 mapping 可覆盖游戏 IP 运营、跨媒体内容、实时战略设计及 AI 辅助生产人才，寻找能协调长期世界观与高频用户触点的人。</div>
+  <div class="meta">X / Peter Yang · 2026-10-13 <span class="eng">♥ 61 · ↻ 1 · 💬 13</span> <a class="src-link" href="https://x.com/petergyang/status/2109820627561676970" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Yang" data-big="0" data-date="2026-10-13" data-topics="" data-search="grok bot 用角色而非聊天线程组织个人 agent here&#x27;s a clip of me explaining why grok @bot is my favorite agent right now.
+
+tl;dr it’s built on personas instead of ch ai 产品教育者 peter yang 表示，grok bot 以 persona 而不是聊天线程组织工作，让不同 agent 像各自负责岗位的员工：分别承担客服、youtube 研究准备、家庭跑腿和健身跟踪。其新能力还包括免费 x 访问、独立邮箱与 opus 模型支持。 x / peter yang peter yang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/petergyang/status/2109803399332213090" target="_blank" rel="noopener">Grok Bot 用角色而非聊天线程组织个人 agent</a></h3>
+  <div class="title-en">Here&#x27;s a clip of me explaining why Grok @bot is my favorite agent right now.
+
+tl;dr It’s built on personas instead of ch</div>
+  <p class="sum-cn">AI 产品教育者 Peter Yang 表示，Grok Bot 以 persona 而不是聊天线程组织工作，让不同 agent 像各自负责岗位的员工：分别承担客服、YouTube 研究准备、家庭跑腿和健身跟踪。其新能力还包括免费 X 访问、独立邮箱与 Opus 模型支持。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Here&#x27;s a clip of me explaining why Grok @bot is my favorite agent right now.
+
+tl;dr It’s built on personas instead of chat threads, so it really feels like hiring employees to work for you. Each owns a specific job:
+
+→ Behind the Growth owns customer support
+→ YouTube Producer owns research and prep
+→ Loving Husband owns errands for my family
+→ Health Coach keeps my workouts on track
+
+📌 Watch my latest Grok Bot video covering how I&#x27;m using its new features here (free X access, its own email, and Opus): https://t.co/eu1nBVXqyd</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>稳定角色、明确职责和持续工具权限，比一次性对话更接近可管理的数字员工，也更容易形成长期上下文与结果归属。</div>
+  <div class="action"><span class="alabel">招聘行动</span>在招聘与人才 mapping 自动化中，可按研究员、触达专员、数据维护员等角色拆分 agent，并为每个角色定义权限、输入输出和人工验收标准。</div>
+  <div class="meta">X / Peter Yang · 2026-10-13 <span class="eng">♥ 77 · ↻ 6 · 💬 18</span> <a class="src-link" href="https://x.com/petergyang/status/2109803399332213090" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Dan Shipper" data-big="0" data-date="2026-10-13" data-topics="" data-search="muse wonder 完整版尚未开放 api note: this is muse wonder standard. wonder full is, inexplicably, not available on the api. will have a run shortly howe every ceo dan shipper 说明，他当前测试的是 muse wonder standard；能力更完整的 wonder full 暂未提供 api，因此相关结果不能代表完整版表现。他计划在可用后补充测试。 x / dan shipper dan shipper">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/danshipper/status/2109800647575146906" target="_blank" rel="noopener">Muse Wonder 完整版尚未开放 API</a></h3>
+  <div class="title-en">NOTE: this is Muse Wonder Standard. Wonder Full is, inexplicably, not available on the API. Will have a run shortly howe</div>
+  <p class="sum-cn">Every CEO Dan Shipper 说明，他当前测试的是 Muse Wonder Standard；能力更完整的 Wonder Full 暂未提供 API，因此相关结果不能代表完整版表现。他计划在可用后补充测试。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>NOTE: this is Muse Wonder Standard. Wonder Full is, inexplicably, not available on the API. Will have a run shortly however</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>模型产品的网页版本、Standard 版本与 API 版本可能存在显著能力差异，评测结论必须明确具体版本和访问渠道。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才团队在核验候选人的模型评测项目时，应要求记录版本、API 可用性、参数与测试日期，避免把不同产品层级混为一谈。</div>
+  <div class="meta">X / Dan Shipper · 2026-10-13 <span class="eng">♥ 16 · ↻ 0 · 💬 0</span> <a class="src-link" href="https://x.com/danshipper/status/2109800647575146906" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Guillermo Rauch" data-big="0" data-date="2026-10-12" data-topics="" data-search="vercel 推出极简、模型中立的 ai 编程 cli coding clis keep getting more complicated. daemons, 3 layers of tuis, client-server architectures.
+
+the whole point of a vercel ceo guillermo rauch 认为，编码 cli 正被 daemon、多层 tui 与客户端服务架构拖得过于复杂。他推荐体积约 6mb、毫秒级启动的 fx，主打模型中立，并内置 mcp、skills、subagents 与 acp。 x / guillermo rauch guillermo rauch">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/rauchg/status/2109734766107099312" target="_blank" rel="noopener">Vercel 推出极简、模型中立的 AI 编程 CLI</a></h3>
+  <div class="title-en">Coding CLIs keep getting more complicated. Daemons, 3 layers of TUIs, client-server architectures.
+
+The whole point of a</div>
+  <p class="sum-cn">Vercel CEO Guillermo Rauch 认为，编码 CLI 正被 daemon、多层 TUI 与客户端服务架构拖得过于复杂。他推荐体积约 6MB、毫秒级启动的 fx，主打模型中立，并内置 MCP、Skills、Subagents 与 ACP。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Coding CLIs keep getting more complicated. Daemons, 3 layers of TUIs, client-server architectures.
+
+The whole point of a CLI is to deliver intelligence with zero friction, and be unix-like.
+
+💾 Try https://t.co/OL0LzGtvAw. It&#x27;s 6mb, starts in milliseconds, model-agnostic. It&#x27;s tastefully minimal: MCP, Skills, Subagents and ACP built-in.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>当编码 agent 功能快速堆叠时，低启动延迟、Unix 风格组合能力和最小认知负担可能重新成为开发者工具的差异化优势。</div>
+  <div class="action"><span class="alabel">招聘行动</span>关注做过高性能 CLI、agent harness、MCP 与开发者体验的人才，面试时要求其权衡功能丰富度、常驻进程和零摩擦启动。</div>
+  <div class="meta">X / Guillermo Rauch · 2026-10-12 <span class="eng">♥ 539 · ↻ 27 · 💬 102</span> <a class="src-link" href="https://x.com/rauchg/status/2109734766107099312" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Guillermo Rauch" data-big="0" data-date="2026-10-12" data-topics="" data-search="muse wonder 接入 vercel ai gateway muse wonder on vercel ai gateway
+try with 𝚏𝚡 --𝚖𝚘𝚍𝚎𝚕 𝚖𝚎𝚝𝚊/𝚖𝚞𝚜𝚎-𝚠𝚘𝚗𝚍𝚎𝚛-𝟷.𝟶 https://t.co/oi8ltdknyz https://t.co/ckx651xyu vercel ceo guillermo rauch 宣布，meta 的 muse wonder 1.0 已可通过 vercel ai gateway 调用，并可在 fx 中直接选择对应模型。原文没有披露性能、价格或评测结果。 x / guillermo rauch guillermo rauch">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/rauchg/status/2109719267344261375" target="_blank" rel="noopener">Muse Wonder 接入 Vercel AI Gateway</a></h3>
+  <div class="title-en">Muse Wonder on Vercel AI Gateway
+Try with 𝚏𝚡 --𝚖𝚘𝚍𝚎𝚕 𝚖𝚎𝚝𝚊/𝚖𝚞𝚜𝚎-𝚠𝚘𝚗𝚍𝚎𝚛-𝟷.𝟶 https://t.co/OI8lTDKnyZ https://t.co/Ckx651xYU</div>
+  <p class="sum-cn">Vercel CEO Guillermo Rauch 宣布，Meta 的 Muse Wonder 1.0 已可通过 Vercel AI Gateway 调用，并可在 fx 中直接选择对应模型。原文没有披露性能、价格或评测结果。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Muse Wonder on Vercel AI Gateway
+Try with 𝚏𝚡 --𝚖𝚘𝚍𝚎𝚕 𝚖𝚎𝚝𝚊/𝚖𝚞𝚜𝚎-𝚠𝚘𝚗𝚍𝚎𝚛-𝟷.𝟶 https://t.co/OI8lTDKnyZ https://t.co/Ckx651xYUJ</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>AI Gateway 正成为新模型快速触达开发者的分发层，统一调用入口会降低模型试用和切换成本。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才 mapping 可关注模型网关、推理路由和开发者生态人才，并追踪具备多模态模型接入与评测经验的工程师。</div>
+  <div class="meta">X / Guillermo Rauch · 2026-10-12 <span class="eng">♥ 179 · ↻ 5 · 💬 28</span> <a class="src-link" href="https://x.com/rauchg/status/2109719267344261375" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Aaron Levie" data-big="0" data-date="2026-10-12" data-topics="" data-search="agent 将根据任务动态设计自己的 harness ok this is quite cool research and ultimately must be the eventual architecture of agents. in the limit, ai will obvious box ceo aaron levie 认为，一项关于 agent 架构的研究指向未来形态：ai 在看到具体任务后，自主决定最合适的 harness，最终会比人类提前固定工具链更有效。原文只给出研究链接，没有展开实验细节。 x / aaron levie aaron levie">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/levie/status/2109788979952558255" target="_blank" rel="noopener">agent 将根据任务动态设计自己的 harness</a></h3>
+  <div class="title-en">Ok this is quite cool research and ultimately must be the eventual architecture of agents. In the limit, AI will obvious</div>
+  <p class="sum-cn">Box CEO Aaron Levie 认为，一项关于 agent 架构的研究指向未来形态：AI 在看到具体任务后，自主决定最合适的 harness，最终会比人类提前固定工具链更有效。原文只给出研究链接，没有展开实验细节。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Ok this is quite cool research and ultimately must be the eventual architecture of agents. In the limit, AI will obviously be better at determining its own harness once it sees the task at hand, than us being able to do this in advance: https://t.co/jl6ZdeUFY1 https://t.co/7UOyjCGtdD</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>agent 架构可能从人工配置的静态工具集转向任务感知的动态编排，评测重点也会从单次回答转为工具选择、权限约束与执行可靠性。</div>
+  <div class="action"><span class="alabel">招聘行动</span>重点寻找 agent planning、动态工具调用、harness 生成和安全评测人才，并考察其是否能设计受约束的自适应执行环境。</div>
+  <div class="meta">X / Aaron Levie · 2026-10-12 <span class="eng">♥ 289 · ↻ 22 · 💬 43</span> <a class="src-link" href="https://x.com/levie/status/2109788979952558255" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Aaron Levie" data-big="0" data-date="2026-10-12" data-topics="" data-search="meta 全面进入前沿模型竞争或继续压低 token 成本 what a crazy time in ai with meta now jumping fully into the frontier. now that there are multiple players pushing the s box ceo aaron levie 认为，meta 全力投入前沿模型后，多家厂商同时推动能力边界，将进一步加快模型进步，并降低最高能力层级的 token 成本。该判断是作者对竞争格局的预测。 x / aaron levie aaron levie">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/levie/status/2109711062757216738" target="_blank" rel="noopener">Meta 全面进入前沿模型竞争或继续压低 token 成本</a></h3>
+  <div class="title-en">What a crazy time in AI with Meta now jumping fully into the frontier. Now that there are multiple players pushing the s</div>
+  <p class="sum-cn">Box CEO Aaron Levie 认为，Meta 全力投入前沿模型后，多家厂商同时推动能力边界，将进一步加快模型进步，并降低最高能力层级的 token 成本。该判断是作者对竞争格局的预测。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>What a crazy time in AI with Meta now jumping fully into the frontier. Now that there are multiple players pushing the state of the art, this is going to lead to a further acceleration of advances, as well as the lowering cost of tokens for even the highest levels of capability. https://t.co/w2p4pEMInH https://t.co/UFAnJ5Cj8c</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>更多前沿模型供给会强化多模型选择与价格竞争，应用公司的护城河将更依赖数据、工作流、分发和持续评测，而非绑定单一模型。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才地图应同步覆盖 Meta 前沿模型团队、多模型基础设施与推理经济性人才，并动态更新对模型厂商流动方向的判断。</div>
+  <div class="meta">X / Aaron Levie · 2026-10-12 <span class="eng">♥ 487 · ↻ 32 · 💬 41</span> <a class="src-link" href="https://x.com/levie/status/2109711062757216738" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Aaron Levie" data-big="0" data-date="2026-10-12" data-topics="" data-search="agent swarm 将成为企业网络安全的高消耗核心工作负载 agent swarms are going to be a core part of many enterprise workflows in the future. the ability to throw compute at pro box ceo aaron levie 预测，agent swarm 会进入大量企业流程，尤其适合将算力投入可大规模并行的问题。网络安全可用大量 agent 持续测试攻击排列组合、搜索风险向量并串联利用路径，因此可能成为大型企业最主要的 token 消耗场景之一。 x / aaron levie aaron levie">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/levie/status/2109682812811137061" target="_blank" rel="noopener">agent swarm 将成为企业网络安全的高消耗核心工作负载</a></h3>
+  <div class="title-en">Agent swarms are going to be a core part of many enterprise workflows in the future. The ability to throw compute at pro</div>
+  <p class="sum-cn">Box CEO Aaron Levie 预测，agent swarm 会进入大量企业流程，尤其适合将算力投入可大规模并行的问题。网络安全可用大量 agent 持续测试攻击排列组合、搜索风险向量并串联利用路径，因此可能成为大型企业最主要的 token 消耗场景之一。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>Agent swarms are going to be a core part of many enterprise workflows in the future. The ability to throw compute at problems that you can massively parallelize will be too useful to not take advantage of. 
+
+Cyber will be one of the biggest beneficiaries of this as it’s a space where testing vast number of permutations of attacks (without getting tired or bored) is an incredibly useful property. You have a wide search space of possible risk vectors and you generally need to be able to chain together different scenarios to achieve the exploit. 
+
+This will become one of the biggest token uses in large enterprises given the range of IT systems, software, physical infrastructure, and data that needs to be protected at all times. Super interesting times in cyber.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>安全工作天然具备广阔搜索空间、连续运行和多步骤推理需求，是 swarm 能力与成本曲线最容易同时显现价值的场景。</div>
+  <div class="action"><span class="alabel">招聘行动</span>优先 mapping agent security、自动化红队、攻击路径搜索和安全评测人才，并关注能控制 swarm 成本、误报与授权边界的工程负责人。</div>
+  <div class="meta">X / Aaron Levie · 2026-10-12 <span class="eng">♥ 159 · ↻ 23 · 💬 38</span> <a class="src-link" href="https://x.com/levie/status/2109682812811137061" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Ryo Lu" data-big="0" data-date="2026-10-12" data-topics="" data-search="ryos 用 ai 快速扩展词典与健身应用 new on ryos: dictionary + fitness
+
+learn new words, pronunciation, 漢字. plan workouts, track body and food with ai.
+
+made 产品设计师 ryo lu 为 ryos 新增词典与健身功能，可学习词汇、发音和汉字，也能规划训练并跟踪身体与饮食数据；这些功能使用 bot 与 cursor 构建。 x / ryo lu ryo lu">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/ryolu_/status/2109568690358555064" target="_blank" rel="noopener">ryOS 用 AI 快速扩展词典与健身应用</a></h3>
+  <div class="title-en">new on ryOS: Dictionary + Fitness
+
+learn new words, pronunciation, 漢字. plan workouts, track body and food with AI.
+
+made</div>
+  <p class="sum-cn">产品设计师 Ryo Lu 为 ryOS 新增词典与健身功能，可学习词汇、发音和汉字，也能规划训练并跟踪身体与饮食数据；这些功能使用 bot 与 Cursor 构建。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>new on ryOS: Dictionary + Fitness
+
+learn new words, pronunciation, 漢字. plan workouts, track body and food with AI.
+
+made with @bot @cursor_ai https://t.co/BXEp6UzL3H</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>AI 编程工具让个人开发者更容易把多个垂直小应用组合成个人操作系统，但长期价值仍取决于数据连续性和日常使用频率。</div>
+  <div class="action"><span class="alabel">招聘行动</span>关注能够独立完成设计、AI 辅助开发与快速发布的全栈产品人才，并用真实作品验证其跨场景整合能力。</div>
+  <div class="meta">X / Ryo Lu · 2026-10-12 <span class="eng">♥ 338 · ↻ 9 · 💬 16</span> <a class="src-link" href="https://x.com/ryolu_/status/2109568690358555064" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Zara Zhang" data-big="0" data-date="2026-10-12" data-topics="" data-search="当代码成为叙事媒介，人的经历决定作品灵魂 i just heard the most touching ai coding story.
+
+a friend @vicyaqingyang grew up in a modest home full of cockroaches. t builder zara zhang 分享了一则 ai 编程故事：朋友童年在简陋住房中与蟑螂相伴，母亲把灭蟑变成游戏；另一位朋友据此 vibe coded 出一款与妈妈比赛抓蟑螂的游戏，令当事人落泪。技术并不复杂，真正让作品有灵魂的是人的经历、情感与故事。 x / zara zhang zara zhang">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/zarazhangrui/status/2109673430245421415" target="_blank" rel="noopener">当代码成为叙事媒介，人的经历决定作品灵魂</a></h3>
+  <div class="title-en">I just heard the most touching AI coding story.
+
+A friend @vicyaqingyang grew up in a modest home full of cockroaches. T</div>
+  <p class="sum-cn">Builder Zara Zhang 分享了一则 AI 编程故事：朋友童年在简陋住房中与蟑螂相伴，母亲把灭蟑变成游戏；另一位朋友据此 vibe coded 出一款与妈妈比赛抓蟑螂的游戏，令当事人落泪。技术并不复杂，真正让作品有灵魂的是人的经历、情感与故事。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>I just heard the most touching AI coding story.
+
+A friend @vicyaqingyang grew up in a modest home full of cockroaches. To turn lemons into lemonade, her mom made killing them a game.
+
+When she told this story to another friend, that friend vibe coded a game from it. You catch cockroaches in a room and compete against Mom.
+
+She cried while playing it.
+
+The game isn’t technically sophisticated. Any model can build it pretty quickly now. What gives it a soul is the human story, experience, and emotion behind it.
+
+Code is the new medium for storytelling.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>模型让实现成本趋近于零后，独特经历、叙事判断和情感表达会成为产品更难复制的部分，代码也因此扩展为大众创作媒介。</div>
+  <div class="action"><span class="alabel">招聘行动</span>招聘 AI 原生产品人才时，不只评估编码速度，还应观察其能否发现真实故事、提炼情绪价值并把个人洞察转化为可体验的产品。</div>
+  <div class="meta">X / Zara Zhang · 2026-10-12 <span class="eng">♥ 64 · ↻ 1 · 💬 16</span> <a class="src-link" href="https://x.com/zarazhangrui/status/2109673430245421415" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Steinberger" data-big="0" data-date="2026-10-12" data-topics="" data-search="同成本模型的吞吐差异会彻底改变 agent 体验 6.1 sol ultrafast &amp;gt;&amp;gt;&amp;gt; 6 astra
+
+~ same cost but whole different game with 250 tpm openclaw 与 openai 的 peter steinberger 表示，6.1 sol ultrafast 明显优于 6 astra，两者成本接近，但前者达到约 250 tpm。原文未提供测试任务、统计口径或完整评测数据。 x / peter steinberger peter steinberger">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/steipete/status/2109730774593487009" target="_blank" rel="noopener">同成本模型的吞吐差异会彻底改变 agent 体验</a></h3>
+  <div class="title-en">6.1 Sol ultrafast &amp;gt;&amp;gt;&amp;gt; 6 Astra
+
+~ same cost but whole different game with 250 tpm</div>
+  <p class="sum-cn">OpenClaw 与 OpenAI 的 Peter Steinberger 表示，6.1 Sol ultrafast 明显优于 6 Astra，两者成本接近，但前者达到约 250 tpm。原文未提供测试任务、统计口径或完整评测数据。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>6.1 Sol ultrafast &amp;gt;&amp;gt;&amp;gt; 6 Astra
+
+~ same cost but whole different game with 250 tpm</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>对交互式 agent 而言，吞吐和等待时间可能比小幅能力差异更直接影响工作流可用性，但单条体验仍需标准化基准验证。</div>
+  <div class="action"><span class="alabel">招聘行动</span>评估模型基础设施人才时，要求其同时比较质量、延迟、吞吐与成本，并检查是否能设计可复现的真实任务基准。</div>
+  <div class="meta">X / Peter Steinberger · 2026-10-12 <span class="eng">♥ 2153 · ↻ 42 · 💬 150</span> <a class="src-link" href="https://x.com/steipete/status/2109730774593487009" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Peter Steinberger" data-big="0" data-date="2026-10-12" data-topics="" data-search="vibe coding 的标签正在引发开发者身份争议 said that last year, saying it again.
+vibes coding is a slur. https://t.co/hwbfc1e2na openclaw 与 openai 的 peter steinberger 再次表示，他认为 vibe coding 已被当作带有贬义的称呼。原文没有展开论证，但反映出 ai 辅助编程方式与专业开发者身份之间仍存在话语冲突。 x / peter steinberger peter steinberger">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/steipete/status/2109724776168300631" target="_blank" rel="noopener">vibe coding 的标签正在引发开发者身份争议</a></h3>
+  <div class="title-en">said that last year, saying it again.
+vibes coding is a slur. https://t.co/hWBfC1e2NA</div>
+  <p class="sum-cn">OpenClaw 与 OpenAI 的 Peter Steinberger 再次表示，他认为 vibe coding 已被当作带有贬义的称呼。原文没有展开论证，但反映出 AI 辅助编程方式与专业开发者身份之间仍存在话语冲突。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>said that last year, saying it again.
+vibes coding is a slur. https://t.co/hWBfC1e2NA</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>当 AI 改变代码生产方式时，团队若只争论标签，容易忽略真正需要评估的工程质量、责任边界和交付结果。</div>
+  <div class="action"><span class="alabel">招聘行动</span>招聘中避免用是否自称 vibe coder 做粗糙筛选，改用代码审查、测试、系统设计和 AI 协作过程来判断候选人的真实能力。</div>
+  <div class="meta">X / Peter Steinberger · 2026-10-12 <span class="eng">♥ 1832 · ↻ 84 · 💬 127</span> <a class="src-link" href="https://x.com/steipete/status/2109724776168300631" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Dan Shipper" data-big="0" data-date="2026-10-12" data-topics="" data-search="muse wonder 生成讲解视频的效果仍显粗糙 i used muse wonder to make a video explaining personal benchmarks..
+
+this is ummm pretty rough
+
+interestingly all of its every ceo dan shipper 用 muse wonder 制作个人 benchmark 讲解视频，认为结果相当粗糙；他还观察到目前生成的视频都使用澳大利亚口音旁白。该反馈来自个人试用，不是系统性评测。 x / dan shipper dan shipper">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/danshipper/status/2109778026091209087" target="_blank" rel="noopener">Muse Wonder 生成讲解视频的效果仍显粗糙</a></h3>
+  <div class="title-en">I used muse wonder to make a video explaining personal benchmarks..
+
+this is ummm pretty rough
+
+interestingly all of its</div>
+  <p class="sum-cn">Every CEO Dan Shipper 用 Muse Wonder 制作个人 benchmark 讲解视频，认为结果相当粗糙；他还观察到目前生成的视频都使用澳大利亚口音旁白。该反馈来自个人试用，不是系统性评测。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>I used muse wonder to make a video explaining personal benchmarks..
+
+this is ummm pretty rough
+
+interestingly all of its videos so far are narrated in an Australian accent. I&#x27;ll leave interpretation to the reader https://t.co/OULxzZFCxt</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>视频模型即使能快速完成端到端生成，在内容控制、旁白风格和稳定性上仍可能暴露明显限制，个人 benchmark 对发现这些体验问题很有价值。</div>
+  <div class="action"><span class="alabel">招聘行动</span>mapping 多模态人才时，关注视频生成、语音控制和主观质量评测经验，并要求候选人说明如何把个人测试转化为可复现指标。</div>
+  <div class="meta">X / Dan Shipper · 2026-10-12 <span class="eng">♥ 43 · ↻ 1 · 💬 9</span> <a class="src-link" href="https://x.com/danshipper/status/2109778026091209087" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="tweet" data-layer="L2_builder" data-company="社区/其他" data-ctype="Builder 推文" data-author="Aditya Agarwal" data-big="0" data-date="2026-10-12" data-topics="" data-search="前沿实验室与顶尖 ai 组织之间仍有巨大使用鸿沟 there is a big delta in how frontier lab employees use ai and how even the top 1% of ai orgs use ai.
+
+this is on public  south park commons 合伙人、bevel health 联合创始人 aditya agarwal 认为，前沿实验室员工使用 ai 的方式，与外部最领先的少数 ai 组织之间仍有明显差距，而且这种差距仅基于公开能力就已存在。他判断，这里可能出现一个为各类公司横向提速的创业机会。 x / aditya agarwal aditya agarwal">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">Builder 推文</span><span class="tag">Builder 声音</span></div>
+  <h3 class="title-cn"><a href="https://x.com/adityaag/status/2109748501982872003" target="_blank" rel="noopener">前沿实验室与顶尖 AI 组织之间仍有巨大使用鸿沟</a></h3>
+  <div class="title-en">There is a big delta in how frontier lab employees use AI and how even the top 1% of AI orgs use AI.
+
+This is on public </div>
+  <p class="sum-cn">South Park Commons 合伙人、Bevel Health 联合创始人 Aditya Agarwal 认为，前沿实验室员工使用 AI 的方式，与外部最领先的少数 AI 组织之间仍有明显差距，而且这种差距仅基于公开能力就已存在。他判断，这里可能出现一个为各类公司横向提速的创业机会。</p>
+  <details class="en-block"><summary>英文原文 EN</summary><p>There is a big delta in how frontier lab employees use AI and how even the top 1% of AI orgs use AI.
+
+This is on public capabilities...I suspect this delta will exist for a while..
+
+I also feel like there is a company opportunity in here that is a horizontal accelerant.</p></details>
+  <div class="insight"><span class="ilabel">洞察</span>AI 竞争不只取决于能否访问模型，更取决于工作流重构、内部工具、使用习惯和组织学习速度；公开能力也能产生很大的执行差。</div>
+  <div class="action"><span class="alabel">招聘行动</span>人才 mapping 应寻找既深入使用前沿工具、又能推动组织采用的 AI enablement 人才，并在访谈中核验其具体工作流与可量化效率提升。</div>
+  <div class="meta">X / Aditya Agarwal · 2026-10-12 <span class="eng">♥ 42 · ↻ 3 · 💬 8</span> <a class="src-link" href="https://x.com/adityaag/status/2109748501982872003" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="podcast" data-layer="L3_longform" data-company="社区/其他" data-ctype="播客深度访谈" data-author="The MAD Podcast with Matt Turck" data-big="0" data-date="2026-10-08" data-topics="" data-search="数十亿 agent 涌入后，数据库必须为自主操作重做安全边界 what happens when billions of ai agents hit your database? (andy pavlo) 核心观点：agent 不再只是查询数据库，而是在创建、分支、写入甚至误删数据库，速度远超多数团队的治理准备。carnegie mellon 教授、clickhouse labs 创始人 andy pavlo 指出，向量检索已从专门产品的卖点变成各类数据库的基础能力，真正的新问题转向 agent 如何安全地操作数据系统。他提醒，缺乏数据库历史与工程常识的高速 agent 开发非常危险，并直言「归根结底，向量能力只是一个索引」。数据库分支让 agent 可以低成本复制环境并并行实验，但生产数据误删、权限失控和不可追踪变更也会随之放大。 the mad podcast with matt turck the mad podcast with matt turck">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">播客深度访谈</span><span class="tag">深度长访谈</span></div>
+  <h3 class="title-cn"><a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" rel="noopener">数十亿 agent 涌入后，数据库必须为自主操作重做安全边界</a></h3>
+  <div class="title-en">What Happens When Billions of AI Agents Hit Your Database? (Andy Pavlo)</div>
+  <p class="sum-cn">核心观点：agent 不再只是查询数据库，而是在创建、分支、写入甚至误删数据库，速度远超多数团队的治理准备。Carnegie Mellon 教授、ClickHouse Labs 创始人 Andy Pavlo 指出，向量检索已从专门产品的卖点变成各类数据库的基础能力，真正的新问题转向 agent 如何安全地操作数据系统。他提醒，缺乏数据库历史与工程常识的高速 agent 开发非常危险，并直言「归根结底，向量能力只是一个索引」。数据库分支让 agent 可以低成本复制环境并并行实验，但生产数据误删、权限失控和不可追踪变更也会随之放大。</p>
+  <div class="insight"><span class="ilabel">洞察</span>agent 时代的数据库竞争点会从单一向量检索转向可隔离分支、细粒度权限、变更审计、自动回滚与面向机器工作负载的弹性。懂传统数据库原理又理解 agent 行为的人才将变得稀缺。</div>
+  <div class="action"><span class="alabel">招聘行动</span>招聘与 mapping 可优先覆盖数据库内核、云数据库分支、数据安全和 agent 基础设施人才；面试时加入 agent 误删生产库的防护设计题，观察候选人是否能给出隔离、审批、审计和恢复的完整方案。</div>
+  <div class="meta">The MAD Podcast with Matt Turck · 2026-10-08  <a class="src-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+<article class="card" data-plat="zara" data-cat="podcast" data-layer="L3_longform" data-company="社区/其他" data-ctype="播客深度访谈" data-author="AI &amp; I by Every" data-big="0" data-date="2026-09-30" data-topics="" data-search="sam altman：ai 提高开发能力，也同步抬高了交付标准 how sam altman uses dots to take back his time 核心观点：更强的 ai 编程能力没有减少开发工作，反而释放了大量潜在需求，并让用户期待更高。openai ceo sam altman 认为，人仍然位于 ai 创造活动的中心，因为社会更关心作品背后的人、公司与意图；缺乏创造性的任务可能被自动化，但新的产品与工作不会短缺。他概括这种张力为「开发者从未能做这么多，但标准也从未如此高」。openai 正探索持续在后台运行、连接系统并主动执行任务的 agent，同时希望通过 chatgpt 应用生态、订阅可携带性和 marketplace，让外部开发者创造更多价值。 ai &amp; i by every ai &amp; i by every">
+  <div class="tags"><span class="tag plat plat-zara">Follow Builders</span><span class="tag company">社区/其他</span><span class="tag">播客深度访谈</span><span class="tag">深度长访谈</span></div>
+  <h3 class="title-cn"><a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank" rel="noopener">Sam Altman：AI 提高开发能力，也同步抬高了交付标准</a></h3>
+  <div class="title-en">How Sam Altman Uses Dots to Take Back His Time</div>
+  <p class="sum-cn">核心观点：更强的 AI 编程能力没有减少开发工作，反而释放了大量潜在需求，并让用户期待更高。OpenAI CEO Sam Altman 认为，人仍然位于 AI 创造活动的中心，因为社会更关心作品背后的人、公司与意图；缺乏创造性的任务可能被自动化，但新的产品与工作不会短缺。他概括这种张力为「开发者从未能做这么多，但标准也从未如此高」。OpenAI 正探索持续在后台运行、连接系统并主动执行任务的 agent，同时希望通过 ChatGPT 应用生态、订阅可携带性和 marketplace，让外部开发者创造更多价值。</p>
+  <div class="insight"><span class="ilabel">洞察</span>AI 时代的新瓶颈正从实现能力迁移到选择做什么、如何保持产品一致性，以及如何建立可信的持续执行环境。平台竞争也不只是模型能力，而是谁能让开发者在其生态中创造并分发更多价值。</div>
+  <div class="action"><span class="alabel">招聘行动</span>招聘与 mapping 应提高对产品判断、创意密度、agent 平台和生态建设人才的优先级；面试时让候选人在实现不再稀缺的前提下，说明如何选题、统一体验并设计持续运行 agent 的权限与验收机制。</div>
+  <div class="meta">AI &amp; I by Every · 2026-09-30  <a class="src-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank" rel="noopener">原文 ↗</a></div>
+</article>
+  </div>
+  <div class="empty" id="empty" style="display:none">没有符合条件的内容，试试减少筛选项。</div>
+</main>
+<footer>每周科技洞察 · 数据源：Zara Zhang follow-builders 中央 feed + 本地 frontier-radar 多层信源 · 仅聚合公开内容</footer>
+<script>
+(function(){
+  var sel={plat:new Set(),layer:new Set(),topics:new Set(),company:new Set(),ctype:new Set(),author:new Set()};
+  var bigOnly=false;
+  var q=document.getElementById('q');
+  var list=document.getElementById('list');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var countEl=document.getElementById('count');
+  var selcount=document.getElementById('selcount');
+  var emptyEl=document.getElementById('empty');
+  function totalSel(){var n=0;Object.keys(sel).forEach(function(k){n+=sel[k].size;});return n+(bigOnly?1:0);}
+  function apply(){
+    var kw=(q.value||'').trim().toLowerCase();
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=true;
+      if(bigOnly&&c.dataset.big!=='1')ok=false;
+      if(ok&&sel.plat.size&&!sel.plat.has(c.dataset.plat))ok=false;
+      if(ok&&sel.layer.size&&!sel.layer.has(c.dataset.layer))ok=false;
+      if(ok&&sel.company.size&&!sel.company.has(c.dataset.company))ok=false;
+      if(ok&&sel.ctype.size&&!sel.ctype.has(c.dataset.ctype))ok=false;
+      if(ok&&sel.author.size&&!sel.author.has(c.dataset.author))ok=false;
+      if(ok&&sel.topics.size){
+        var tp=(c.dataset.topics||'').split('|');var hit=false;
+        tp.forEach(function(t){if(sel.topics.has(t))hit=true;});
+        if(!hit)ok=false;
+      }
+      if(ok&&kw&&(c.dataset.search||'').indexOf(kw)<0)ok=false;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    countEl.textContent='显示 '+shown+' / '+cards.length+' 条';
+    emptyEl.style.display=shown?'none':'';
+    var n=totalSel();
+    if(n){selcount.style.display='';selcount.textContent=n;}else{selcount.style.display='none';}
+  }
+  document.querySelectorAll('.chip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var g=ch.dataset.group,v=ch.dataset.val;
+      if(sel[g].has(v)){sel[g].delete(v);ch.classList.remove('on');}
+      else{sel[g].add(v);ch.classList.add('on');}
+      apply();
+    });
+  });
+  q.addEventListener('input',apply);
+  var bigBtn=document.getElementById('bigonly');
+  bigBtn.addEventListener('click',function(){bigOnly=!bigOnly;bigBtn.classList.toggle('on',bigOnly);apply();});
+  document.getElementById('clear').addEventListener('click',function(){
+    Object.keys(sel).forEach(function(k){sel[k].clear();});
+    bigOnly=false;bigBtn.classList.remove('on');
+    document.querySelectorAll('.chip.on').forEach(function(c){c.classList.remove('on');});
+    q.value='';apply();
+  });
+  // 排序
+  var sort=document.getElementById('sort');
+  function doSort(){
+    var mode=sort.value;var arr=cards.slice();
+    arr.sort(function(a,b){
+      if(mode==='big'){var d=(b.dataset.big|0)-(a.dataset.big|0);if(d)return d;return (b.dataset.date||'').localeCompare(a.dataset.date||'');}
+      if(mode==='date_asc')return (a.dataset.date||'').localeCompare(b.dataset.date||'');
+      return (b.dataset.date||'').localeCompare(a.dataset.date||'');
+    });
+    arr.forEach(function(c){list.appendChild(c);});
+  }
+  sort.addEventListener('change',doSort);
+  // PC 与手机均默认折叠筛选，点按展开
+  var filters=document.getElementById('filters'),tg=document.getElementById('toggle');
+  filters.classList.add('collapsed');tg.setAttribute('aria-expanded','false');
+  tg.addEventListener('click',function(){
+    var collapsed=filters.classList.toggle('collapsed');
+    tg.setAttribute('aria-expanded',String(!collapsed));
+  });
+  // 分享链接复制
+  var cp=document.getElementById('copyshare');
+  if(cp){cp.addEventListener('click',function(){
+    var u=document.getElementById('shareurl').textContent;
+    navigator.clipboard&&navigator.clipboard.writeText(u).then(function(){cp.textContent='已复制✓';setTimeout(function(){cp.textContent='复制链接';},1500);});
+  });}
+  apply();
+})();
+</script>
+</body>
+</html>
